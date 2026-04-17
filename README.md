@@ -1,41 +1,39 @@
 # LMU Setups Brasil
 
-Site estático em **HTML + CSS + JS** para organizar setups do **Le Mans Ultimate** por **Classe → Carro → Pista**.
+Frontend moderno em **React + Vite + TypeScript** com build estático para GitHub Pages.
 
-## Conteúdo
-- Setups abertos com abas:
-  - **Qualifying**
-  - **Race**
-  - **Sprint (20min)**
-- Seção de **Setup Fixo** com recomendações por pista para:
-  - ABS
-  - TC / TC2
-  - Brake Bias
-  - Engine Map
-  - Estratégia de combustível
-- Busca, filtros rápidos por classe/pista e cards visuais de carros.
-- Tema escuro estilo racing e layout responsivo.
+## Recursos
+- Organização por **Classe → Carro → Pista → (Qualifying/Race/Sprint)**.
+- Seção de **Fixed Setup** com recomendações para sprint e endurance.
+- Novo modelo de tração na UI: **TC Modo, TC Slip e TC Cut** (sem TC/TC2).
+- Visual premium mobile-first: header fixo, cards, transições e expand/collapse.
+- Download de `.svm` placeholder mantendo compatibilidade de estrutura.
 
-## Como usar
-1. Abra `index.html` localmente ou publique no GitHub Pages.
-2. Escolha a classe, carro e pista.
-3. Alterne entre as abas de setup aberto.
-4. Use a tabela de setup fixo para corridas sprint ou endurance.
+## Scripts
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
 
-## Arquivos .svm (placeholders)
-Os botões de download geram arquivos `.svm` **placeholder** com instruções.
+## Estrutura `.svm`
+Use o padrão:
 
-Como adicionar seus setups reais:
-1. Exporte o setup no jogo.
-2. Salve no repositório no padrão:
-   - `setups/[classe]/[carro]/[pista]/qualifying.svm`
-   - `setups/[classe]/[carro]/[pista]/race.svm`
-   - `setups/[classe]/[carro]/[pista]/sprint.svm`
-3. No arquivo `js/app.js`, atualize os links/fluxo de download para apontar para seus arquivos reais.
+`setups/[classe]/[carro]/[pista]/(qualifying|race|sprint).svm`
 
-## Publicar no GitHub Pages
-1. Vá em **Settings → Pages**.
-2. Em **Build and deployment**, selecione:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main` (ou a branch desejada), pasta `/root`
-3. Salve e aguarde o link do site ser gerado.
+Os downloads da interface geram placeholders com esse caminho sugerido para facilitar a migração para arquivos reais.
+
+## Deploy no GitHub Pages
+Este repositório inclui workflow em `.github/workflows/deploy-pages.yml`.
+
+Pré-requisitos:
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push na branch principal (ou execute workflow manualmente).
+
+O workflow faz:
+1. `npm ci`
+2. `npm run build`
+3. upload de `dist/`
+4. deploy automático no GitHub Pages
