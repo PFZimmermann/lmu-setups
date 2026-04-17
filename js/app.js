@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 const classes = {
   Hypercar: [
     "Toyota GR010",
@@ -273,7 +275,13 @@ function fixedSetup(car, track) {
   };
 }
 
-function levelClass(_controlKey, value) {
+function levelClass(controlKey, value) {
+  if (controlKey === "tcSlip") {
+    if (value >= 6) return "level-low";
+    if (value >= 4) return "level-mid";
+    return "level-high";
+  }
+
   if (value >= 6) return "level-high";
   if (value >= 4) return "level-mid";
   return "level-low";
