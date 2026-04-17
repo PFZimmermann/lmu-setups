@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMU Setups Brasil</title>
+    <meta
+      name="description"
+      content="Setups de Le Mans Ultimate por classe, carro e pista, com foco em qualifying, race, sprint e setup fixo."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <h1>LMU Setups Brasil</h1>
+        <p>Setups por Classe → Carro → Pista (Qualifying, Race, Sprint e Fixed)</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="filters card">
+        <h2>Busca e Filtros Rápidos</h2>
+        <div class="filter-grid">
+          <label>
+            Buscar carro
+            <input type="search" id="searchInput" placeholder="Ex: Ferrari 499P" />
+          </label>
+          <label>
+            Classe
+            <select id="classFilter"></select>
+          </label>
+          <label>
+            Carro
+            <select id="carFilter"></select>
+          </label>
+          <label>
+            Pista
+            <select id="trackFilter"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Carros</h2>
+        <div id="carCards" class="cards"></div>
+      </section>
+
+      <section class="card">
+        <h2 id="selectionTitle">Setup</h2>
+        <p id="trackTip" class="tip"></p>
+        <div class="tabs" role="tablist" aria-label="Tipos de setup">
+          <button class="tab is-active" data-tab="qualifying">Qualifying</button>
+          <button class="tab" data-tab="race">Race</button>
+          <button class="tab" data-tab="sprint">Sprint (20min)</button>
+        </div>
+
+        <article id="openSetup" class="panel"></article>
+      </section>
+
+      <section class="card">
+        <h2>Setup Fixo (Fixed Setup)</h2>
+        <p>
+          Em corridas fixed, use os ajustes livres com foco no formato da prova. Sprint = mais agressivo,
+          Endurance = consistência, pneus e combustível.
+        </p>
+        <article id="fixedSetup" class="panel"></article>
+      </section>
+
+      <section class="card">
+        <h2>Como usar arquivos .svm</h2>
+        <ol>
+          <li>Clique em um botão de download para baixar um placeholder .svm com instruções.</li>
+          <li>Substitua pelo seu setup real exportado do Le Mans Ultimate.</li>
+          <li>
+            Salve no repositório em:
+            <code>setups/[classe]/[carro]/[pista]/(qualifying|race|sprint).svm</code>
+          </li>
+          <li>Atualize os links no <code>js/app.js</code> para apontar para seus arquivos reais.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="container footer">Feito para comunidade LMU • GitHub Pages Ready</footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
