@@ -1,17 +1,136 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMU Setups Brasil</title>
     <meta
       name="description"
-      content="Setups do Le Mans Ultimate por Classe → Carro → Pista, com recomendações para Qualifying, Race, Sprint e Fixed Setup."
+      content="Setups de Le Mans Ultimate por classe, carro e pista, com foco em qualifying, race, sprint e setup fixo."
     />
-    <title>LMU Setups Brasil</title>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@600;700&family=Orbitron:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      if (window.tailwind) {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                racing: {
+                  bg: "#080a0f",
+                  card: "#0f1421",
+                  panel: "#151c2b",
+                  line: "#283247",
+                  accent: "#ff4d1f",
+                  neon: "#ff8a00"
+                }
+              },
+              boxShadow: {
+                glow: "0 0 0 1px rgba(255,77,31,.25), 0 12px 34px rgba(0,0,0,.5)",
+                soft: "0 12px 26px rgba(0,0,0,.28)"
+              },
+              fontFamily: {
+                sans: ["Inter", "system-ui", "sans-serif"],
+                race: ["Rajdhani", "Inter", "sans-serif"],
+                orbitron: ["Orbitron", "Rajdhani", "sans-serif"]
+              }
+            }
+          }
+        };
+      }
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-racing-bg text-slate-100 antialiased">
+    <div class="bg-grid"></div>
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-racing-line/80 bg-racing-bg/85 backdrop-blur">
+      <div class="mx-auto flex w-[min(1200px,94vw)] items-center justify-between gap-4 py-3">
+        <div>
+          <h1 class="font-orbitron text-lg tracking-wide text-white sm:text-xl">LMU Setups Brasil</h1>
+          <p class="text-xs text-slate-300 sm:text-sm">Classe → Carro → Pista • Qualifying / Race / Sprint</p>
+        </div>
+        <nav class="hidden gap-4 text-sm text-slate-300 sm:flex">
+          <a href="#filtros" aria-label="Ir para seção de filtros" class="nav-link">Filtros</a>
+          <a href="#carros" aria-label="Ir para seção de carros" class="nav-link">Carros</a>
+          <a href="#setups" aria-label="Ir para seção de setups" class="nav-link">Setups</a>
+          <a href="#fixo" aria-label="Ir para seção de setup fixo" class="nav-link">Fixed</a>
+          <a href="#downloads" aria-label="Ir para seção de arquivos SVM" class="nav-link">.svm</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto w-[min(1200px,94vw)] pb-12 pt-24 sm:pt-28">
+      <section id="filtros" class="card-premium reveal">
+        <h2 class="title-section">Busca e filtros</h2>
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <label class="field">
+            Buscar carro
+            <input type="search" id="searchInput" placeholder="Ex: Ferrari 499P" />
+          </label>
+          <label class="field">
+            Classe
+            <select id="classFilter"></select>
+          </label>
+          <label class="field">
+            Carro
+            <select id="carFilter"></select>
+          </label>
+          <label class="field">
+            Pista
+            <select id="trackFilter"></select>
+          </label>
+        </div>
+      </section>
+
+      <section id="carros" class="card-premium reveal">
+        <h2 class="title-section">Carros</h2>
+        <div id="carCards" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </section>
+
+      <section id="setups" class="card-premium reveal">
+        <h2 id="selectionTitle" class="title-section"></h2>
+        <p id="trackTip" class="tip"></p>
+        <div class="tabs-wrap" role="tablist" aria-label="Tipos de setup">
+          <button class="tab is-active" data-tab="qualifying">Qualifying</button>
+          <button class="tab" data-tab="race">Race</button>
+          <button class="tab" data-tab="sprint">Sprint (20min)</button>
+        </div>
+        <article id="openSetup" class="panel"></article>
+      </section>
+
+      <section id="fixo" class="card-premium reveal">
+        <h2 class="title-section">Setup fixo (fixed setup)</h2>
+        <p class="text-sm text-slate-300">
+          Os controles de tração usam o padrão atual do LMU: <strong>TC</strong>, <strong>TC Power Cut</strong> e
+          <strong>TC Slip</strong>. A tabela mostra os controles disponíveis para o carro selecionado; quando não há
+          confirmação específica por carro, o padrão aplicado é exibir os três controles.
+        </p>
+        <article id="fixedSetup" class="panel mt-3"></article>
+      </section>
+
+      <section id="downloads" class="card-premium reveal">
+        <h2 class="title-section">Como usar arquivos .svm</h2>
+        <ol class="list-decimal space-y-2 pl-6 text-sm text-slate-300">
+          <li>Clique em um botão de download para baixar um placeholder .svm com instruções.</li>
+          <li>Substitua pelo seu setup real exportado do Le Mans Ultimate.</li>
+          <li><code>setups/[classe]/[carro]/[pista]/(qualifying|race|sprint).svm</code></li>
+          <li>Atualize os links no <code>js/app.js</code> para apontar para seus arquivos reais.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="mx-auto w-[min(1200px,94vw)] pb-8 text-xs text-slate-400">
+      Feito para a comunidade LMU • GitHub Pages ready
+    </footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
