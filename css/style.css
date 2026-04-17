@@ -40,6 +40,15 @@ body {
   letter-spacing: 0.02em;
 }
 
+.nav-link {
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
 .field {
   display: grid;
   gap: 0.35rem;

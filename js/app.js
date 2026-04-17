@@ -1,5 +1,3 @@
-document.documentElement.classList.add("js");
-
 const classes = {
   Hypercar: [
     "Toyota GR010",
