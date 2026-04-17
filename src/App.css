@@ -1,0 +1,290 @@
+.app-shell {
+  color: var(--text);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+  background: rgba(9, 11, 16, 0.8);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.top-nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.top-nav a {
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.top-nav a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.main-content {
+  padding: 1rem 0 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: linear-gradient(160deg, #1a1f2a, #10141d);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.reveal {
+  animation: fadeSlide 0.45s ease both;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.filter-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: 1fr;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  color: var(--text);
+  border: 1px solid #2f3a4a;
+  background: #10161f;
+  border-radius: 10px;
+  padding: 0.62rem 0.72rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.car-card {
+  text-align: left;
+  background: #111722;
+  border: 1px solid #2f3a4a;
+  border-radius: 12px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.car-card:hover,
+.car-card.is-selected {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.car-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.car-card p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.tip {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.7rem;
+  color: #ffd7c2;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tab,
+.btn {
+  border: 1px solid #364254;
+  color: var(--text);
+  border-radius: 9px;
+  padding: 0.52rem 0.8rem;
+  background: #0f141d;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tab.is-active,
+.btn {
+  border-color: var(--accent);
+  background: linear-gradient(125deg, var(--accent-2), var(--accent));
+  color: #fff;
+}
+
+.tab:hover,
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.grid-2 {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+}
+
+.box {
+  border: 1px solid #2e3948;
+  background: #0f1520;
+  border-radius: 12px;
+  padding: 0.85rem;
+}
+
+.box h3 {
+  margin-top: 0;
+}
+
+.box ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1rem;
+}
+
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.details {
+  margin-top: 0.75rem;
+  border: 1px solid #2f3b4c;
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  background: #0e141e;
+}
+
+.details summary {
+  cursor: pointer;
+}
+
+.details ul,
+.details ol {
+  margin: 0.6rem 0 0;
+  padding-left: 1rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #364457;
+  padding: 0.46rem;
+  text-align: left;
+}
+
+th {
+  background: #182335;
+}
+
+code {
+  display: inline-block;
+  margin-top: 0.5rem;
+  border: 1px solid #2b3747;
+  background: #111722;
+  border-radius: 8px;
+  padding: 0.3rem 0.45rem;
+}
+
+.transition-in {
+  animation: fadeSlide 0.3s ease;
+}
+
+@media (min-width: 760px) {
+  .filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-nav {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
