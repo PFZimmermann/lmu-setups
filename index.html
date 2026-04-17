@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,80 +8,124 @@
       name="description"
       content="Setups de Le Mans Ultimate por classe, carro e pista, com foco em qualifying, race, sprint e setup fixo."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@600;700&family=Orbitron:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      if (window.tailwind) {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                racing: {
+                  bg: "#080a0f",
+                  card: "#0f1421",
+                  panel: "#151c2b",
+                  line: "#283247",
+                  accent: "#ff4d1f",
+                  neon: "#ff8a00"
+                }
+              },
+              boxShadow: {
+                glow: "0 0 0 1px rgba(255,77,31,.25), 0 12px 34px rgba(0,0,0,.5)",
+                soft: "0 12px 26px rgba(0,0,0,.28)"
+              },
+              fontFamily: {
+                sans: ["Inter", "system-ui", "sans-serif"],
+                race: ["Rajdhani", "Inter", "sans-serif"],
+                orbitron: ["Orbitron", "Rajdhani", "sans-serif"]
+              }
+            }
+          }
+        };
+      }
+    </script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <header class="topbar">
-      <div class="container">
-        <h1>LMU Setups Brasil</h1>
-        <p>Setups por Classe → Carro → Pista (Qualifying, Race, Sprint e Fixed)</p>
+  <body class="bg-racing-bg text-slate-100 antialiased">
+    <div class="bg-grid"></div>
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-racing-line/80 bg-racing-bg/85 backdrop-blur">
+      <div class="mx-auto flex w-[min(1200px,94vw)] items-center justify-between gap-4 py-3">
+        <div>
+          <h1 class="font-orbitron text-lg tracking-wide text-white sm:text-xl">LMU Setups Brasil</h1>
+          <p class="text-xs text-slate-300 sm:text-sm">Classe → Carro → Pista • Qualifying / Race / Sprint</p>
+        </div>
+        <nav class="hidden gap-4 text-sm text-slate-300 sm:flex">
+          <a href="#filtros" class="hover:text-white transition">Filtros</a>
+          <a href="#carros" class="hover:text-white transition">Carros</a>
+          <a href="#setups" class="hover:text-white transition">Setups</a>
+          <a href="#fixo" class="hover:text-white transition">Fixed</a>
+          <a href="#downloads" class="hover:text-white transition">.svm</a>
+        </nav>
       </div>
     </header>
 
-    <main class="container">
-      <section class="filters card">
-        <h2>Busca e Filtros Rápidos</h2>
-        <div class="filter-grid">
-          <label>
+    <main class="mx-auto w-[min(1200px,94vw)] pb-12 pt-24 sm:pt-28">
+      <section id="filtros" class="card-premium reveal">
+        <h2 class="title-section">Busca e filtros</h2>
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <label class="field">
             Buscar carro
             <input type="search" id="searchInput" placeholder="Ex: Ferrari 499P" />
           </label>
-          <label>
+          <label class="field">
             Classe
             <select id="classFilter"></select>
           </label>
-          <label>
+          <label class="field">
             Carro
             <select id="carFilter"></select>
           </label>
-          <label>
+          <label class="field">
             Pista
             <select id="trackFilter"></select>
           </label>
         </div>
       </section>
 
-      <section class="card">
-        <h2>Carros</h2>
-        <div id="carCards" class="cards"></div>
+      <section id="carros" class="card-premium reveal">
+        <h2 class="title-section">Carros</h2>
+        <div id="carCards" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
       </section>
 
-      <section class="card">
-        <h2 id="selectionTitle">Setup</h2>
+      <section id="setups" class="card-premium reveal">
+        <h2 id="selectionTitle" class="title-section"></h2>
         <p id="trackTip" class="tip"></p>
-        <div class="tabs" role="tablist" aria-label="Tipos de setup">
+        <div class="tabs-wrap" role="tablist" aria-label="Tipos de setup">
           <button class="tab is-active" data-tab="qualifying">Qualifying</button>
           <button class="tab" data-tab="race">Race</button>
           <button class="tab" data-tab="sprint">Sprint (20min)</button>
         </div>
-
         <article id="openSetup" class="panel"></article>
       </section>
 
-      <section class="card">
-        <h2>Setup Fixo (Fixed Setup)</h2>
-        <p>
-          Em corridas fixed, use os ajustes livres com foco no formato da prova. Sprint = mais agressivo,
-          Endurance = consistência, pneus e combustível.
+      <section id="fixo" class="card-premium reveal">
+        <h2 class="title-section">Setup fixo (fixed setup)</h2>
+        <p class="text-sm text-slate-300">
+          Os controles de tração usam o padrão atual do LMU: <strong>TC</strong>, <strong>TC Power Cut</strong> e
+          <strong>TC Slip</strong>. A tabela mostra apenas os controles disponíveis para o carro selecionado.
         </p>
-        <article id="fixedSetup" class="panel"></article>
+        <article id="fixedSetup" class="panel mt-3"></article>
       </section>
 
-      <section class="card">
-        <h2>Como usar arquivos .svm</h2>
-        <ol>
+      <section id="downloads" class="card-premium reveal">
+        <h2 class="title-section">Como usar arquivos .svm</h2>
+        <ol class="list-decimal space-y-2 pl-6 text-sm text-slate-300">
           <li>Clique em um botão de download para baixar um placeholder .svm com instruções.</li>
           <li>Substitua pelo seu setup real exportado do Le Mans Ultimate.</li>
-          <li>
-            Salve no repositório em:
-            <code>setups/[classe]/[carro]/[pista]/(qualifying|race|sprint).svm</code>
-          </li>
+          <li><code>setups/[classe]/[carro]/[pista]/(qualifying|race|sprint).svm</code></li>
           <li>Atualize os links no <code>js/app.js</code> para apontar para seus arquivos reais.</li>
         </ol>
       </section>
     </main>
 
-    <footer class="container footer">Feito para comunidade LMU • GitHub Pages Ready</footer>
+    <footer class="mx-auto w-[min(1200px,94vw)] pb-8 text-xs text-slate-400">
+      Feito para a comunidade LMU • GitHub Pages ready
+    </footer>
 
     <script src="js/app.js"></script>
   </body>

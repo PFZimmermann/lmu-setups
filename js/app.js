@@ -1,6 +1,6 @@
 const classes = {
   Hypercar: [
-    "Toyota GR010 Hybrid",
+    "Toyota GR010",
     "Porsche 963",
     "Ferrari 499P",
     "Cadillac V-Series.R",
@@ -12,7 +12,7 @@ const classes = {
   LMP2: ["Oreca 07 Gibson"],
   LMP3: ["Ligier JS P320"],
   GT3: [
-    "Porsche 911 GT3 R (992)",
+    "Porsche 911 GT3 R",
     "Ferrari 296 GT3",
     "BMW M4 GT3",
     "Lamborghini Huracán GT3 EVO2",
@@ -25,42 +25,51 @@ const classes = {
 };
 
 const tracks = [
-  { id: "lemans", nome: "Le Mans (Circuit de la Sarthe)", perfil: "velocidade", dica: "Reduza arrasto e use mapa de motor agressivo só em ataques pontuais." },
-  { id: "spa", nome: "Spa-Francorchamps", perfil: "tecnica", dica: "Cuidado com desgaste traseiro em stints longos." },
-  { id: "monza", nome: "Monza", perfil: "velocidade", dica: "Foque em freada estável para as chicanes com pouca asa." },
-  { id: "bahrain", nome: "Bahrain International Circuit", perfil: "tracao", dica: "Saídas de curva pedem tração e controle térmico dos pneus traseiros." },
-  { id: "portimao", nome: "Portimão (Algarve)", perfil: "tecnica", dica: "Oscilações de relevo pedem ride height mais seguro." },
-  { id: "fuji", nome: "Fuji Speedway", perfil: "velocidade", dica: "Equilibre reta longa com estabilidade no setor final." },
-  { id: "cota", nome: "COTA (Circuit of the Americas)", perfil: "tecnica", dica: "Apoio dianteiro ajuda no primeiro setor e no miolo." },
-  { id: "interlagos", nome: "Interlagos (São Paulo)", perfil: "tracao", dica: "Mantenha tração limpa na subida para a reta principal." },
-  { id: "imola", nome: "Imola", perfil: "tecnica", dica: "Use freio motor e balanço estável sobre zebras." },
-  { id: "silverstone", nome: "Silverstone", perfil: "tecnica", dica: "Sequências rápidas exigem frente precisa e traseira previsível." },
-  { id: "sebring", nome: "Sebring", perfil: "irregular", dica: "Pista muito bumpy: suavize suspensão e eleve o carro." },
-  { id: "daytona", nome: "Daytona", perfil: "velocidade", dica: "Baixo arrasto e atenção na temperatura de pneus no infield." },
-  { id: "nurburgring", nome: "Nürburgring", perfil: "tecnica", dica: "Mais downforce para setor sinuoso e frenagens fortes." },
-  { id: "redbullring", nome: "Red Bull Ring", perfil: "tracao", dica: "Tração na saída das curvas lentas define o pace." },
-  { id: "zandvoort", nome: "Zandvoort", perfil: "tecnica", dica: "Muita carga e precisão de frente para curvas em apoio." },
-  { id: "jeddah", nome: "Jeddah", perfil: "velocidade", dica: "Use carro firme para mudanças rápidas de direção em alta." },
-  { id: "lusail", nome: "Lusail", perfil: "tecnica", dica: "Equilíbrio aerodinâmico estável para curvas longas." },
-  { id: "barcelona", nome: "Barcelona-Catalunya", perfil: "tecnica", dica: "Pista sensível a desgaste dianteiro; preserve o eixo frontal." }
+  { id: "lemans", nome: "Le Mans (Circuit de la Sarthe)", perfil: "velocidade", dica: "Baixo arrasto ajuda na reta, mas mantenha estabilidade no Porsche Curves." },
+  { id: "spa", nome: "Spa-Francorchamps", perfil: "tecnica", dica: "Poupe traseiros em stint longo e mantenha confiança em alta no setor 2." },
+  { id: "monza", nome: "Monza", perfil: "velocidade", dica: "Freada reta e tração limpa nas chicanes valem mais que asa extra." },
+  { id: "bahrain", nome: "Bahrain International Circuit", perfil: "tracao", dica: "Curvas lentas pedem controle de tração um pouco mais protetor." },
+  { id: "portimao", nome: "Portimão (Algarve)", perfil: "tecnica", dica: "Mudanças de relevo favorecem carro previsível e freio estável." },
+  { id: "fuji", nome: "Fuji Speedway", perfil: "velocidade", dica: "Equilibre reta principal com apoio no trecho final mais técnico." },
+  { id: "cota", nome: "COTA (Circuit of the Americas)", perfil: "tecnica", dica: "Frente responsiva melhora o primeiro setor e a sequência em alta." },
+  { id: "interlagos", nome: "Interlagos (São Paulo)", perfil: "tracao", dica: "Trabalhe tração na subida da Junção para defender/atacar na reta." },
+  { id: "imola", nome: "Imola", perfil: "tecnica", dica: "Boa tração de baixa e confiança em zebra fazem diferença no ritmo." },
+  { id: "silverstone", nome: "Silverstone", perfil: "tecnica", dica: "Curvas rápidas exigem equilíbrio aero e traseira estável." },
+  { id: "sebring", nome: "Sebring", perfil: "irregular", dica: "Pista bumpy: alivie suspensão e aceite perder um pouco de resposta." },
+  { id: "daytona", nome: "Daytona", perfil: "velocidade", dica: "Velocidade máxima ajuda muito, mas preserve pneus no infield." },
+  { id: "nurburgring", nome: "Nürburgring", perfil: "tecnica", dica: "Mais carga e freio consistente ajudam no setor sinuoso." },
+  { id: "redbullring", nome: "Red Bull Ring", perfil: "tracao", dica: "Saídas de curvas lentas e tração em subida ditam o pace." },
+  { id: "zandvoort", nome: "Zandvoort", perfil: "tecnica", dica: "Precisão de frente e estabilidade em apoio contínuo são prioridade." },
+  { id: "jeddah", nome: "Jeddah", perfil: "velocidade", dica: "Confiança em mudanças rápidas de direção é chave para não perder tempo." },
+  { id: "lusail", nome: "Lusail", perfil: "tecnica", dica: "Curvas longas pedem equilíbrio aerodinâmico consistente." },
+  { id: "barcelona", nome: "Barcelona-Catalunya", perfil: "tecnica", dica: "Gerencie temperatura dos dianteiros para manter volta estável." }
 ];
 
+const controlsCatalog = {
+  tc: { label: "TC", min: 1, max: 8 },
+  tcPowerCut: { label: "TC Power Cut", min: 1, max: 8 },
+  tcSlip: { label: "TC Slip", min: 1, max: 8 }
+};
+
 const profileAdjust = {
-  velocidade: { aero: -3, ride: -2, camber: -0.1, tc: -1, abs: -1 },
-  tecnica: { aero: 3, ride: 2, camber: -0.2, tc: 0, abs: 1 },
-  tracao: { aero: 1, ride: 1, camber: -0.15, tc: 1, abs: 0 },
-  irregular: { aero: 2, ride: 4, camber: 0.1, tc: 1, abs: 1 }
+  velocidade: { aero: -2.5, ride: -1, camber: -0.08, tc: -1, abs: -1, tcPowerCut: -1, tcSlip: 1 },
+  tecnica: { aero: 2.5, ride: 1, camber: -0.15, tc: 0, abs: 1, tcPowerCut: 0, tcSlip: 0 },
+  tracao: { aero: 1, ride: 1, camber: -0.12, tc: 1, abs: 0, tcPowerCut: 1, tcSlip: -1 },
+  irregular: { aero: 1.5, ride: 3, camber: 0.08, tc: 1, abs: 1, tcPowerCut: 1, tcSlip: -1 }
 };
 
 const cars = Object.entries(classes).flatMap(([classe, nomes], classIndex) =>
   nomes.map((nome, index) => {
     const isGT3 = classe === "GT3";
     const isProto = classe === "Hypercar" || classe === "LMP2" || classe === "LMP3";
+    const controlAvailability = ["tc", "tcPowerCut", "tcSlip"];
+
     return {
       nome,
       classe,
       classIndex,
       index,
+      controlAvailability,
       type: isGT3 ? "gt3" : isProto ? "prototype" : "other",
       key: `${classe}-${nome}`.toLowerCase().replace(/[^a-z0-9]+/g, "-")
     };
@@ -106,7 +115,7 @@ function refreshCarOptions() {
 
   carFilter.innerHTML = filtered.map((car) => `<option value="${car.key}">${car.nome} (${car.classe})</option>`).join("");
   if (!filtered.length) {
-    cardsEl.innerHTML = "<p>Nenhum carro encontrado para o filtro atual.</p>";
+    cardsEl.innerHTML = "<p class='text-sm text-slate-300'>Nenhum carro encontrado para o filtro atual.</p>";
     openSetupEl.innerHTML = "";
     fixedSetupEl.innerHTML = "";
     return;
@@ -116,10 +125,80 @@ function refreshCarOptions() {
 }
 
 function baseFor(car) {
-  if (car.type === "gt3") return { psiF: 26.2, psiR: 26.7, rideF: 54, rideR: 66, wing: 9, camberF: -3.3, camberR: -2.1, toeF: -0.04, toeR: 0.16, bb: 57.5, diff: 40, abs: 4, tc: 3, tc2: 5 };
-  if (car.classe === "LMP3") return { psiF: 24.7, psiR: 25.0, rideF: 44, rideR: 58, wing: 7, camberF: -3.0, camberR: -1.8, toeF: -0.03, toeR: 0.13, bb: 56.5, diff: 45, abs: 3, tc: 2, tc2: 3 };
-  if (car.classe === "LMP2") return { psiF: 24.3, psiR: 24.8, rideF: 43, rideR: 57, wing: 8, camberF: -3.2, camberR: -1.9, toeF: -0.03, toeR: 0.12, bb: 55.7, diff: 44, abs: 3, tc: 2, tc2: 3 };
-  return { psiF: 24.1, psiR: 24.6, rideF: 41, rideR: 55, wing: 8, camberF: -3.1, camberR: -1.7, toeF: -0.02, toeR: 0.12, bb: 55.2, diff: 43, abs: 3, tc: 2, tc2: 2 };
+  if (car.type === "gt3") {
+    return {
+      psiF: 26.2,
+      psiR: 26.7,
+      rideF: 54,
+      rideR: 66,
+      wing: 9,
+      camberF: -3.3,
+      camberR: -2.1,
+      toeF: -0.04,
+      toeR: 0.16,
+      bb: 57.5,
+      diff: 40,
+      abs: 4,
+      tc: 3,
+      tcPowerCut: 3,
+      tcSlip: 5
+    };
+  }
+  if (car.classe === "LMP3") {
+    return {
+      psiF: 24.7,
+      psiR: 25.0,
+      rideF: 44,
+      rideR: 58,
+      wing: 7,
+      camberF: -3.0,
+      camberR: -1.8,
+      toeF: -0.03,
+      toeR: 0.13,
+      bb: 56.5,
+      diff: 45,
+      abs: 3,
+      tc: 2,
+      tcPowerCut: 2,
+      tcSlip: 4
+    };
+  }
+  if (car.classe === "LMP2") {
+    return {
+      psiF: 24.3,
+      psiR: 24.8,
+      rideF: 43,
+      rideR: 57,
+      wing: 8,
+      camberF: -3.2,
+      camberR: -1.9,
+      toeF: -0.03,
+      toeR: 0.12,
+      bb: 55.7,
+      diff: 44,
+      abs: 3,
+      tc: 2,
+      tcPowerCut: 2,
+      tcSlip: 4
+    };
+  }
+  return {
+    psiF: 24.1,
+    psiR: 24.6,
+    rideF: 41,
+    rideR: 55,
+    wing: 8,
+    camberF: -3.1,
+    camberR: -1.7,
+    toeF: -0.02,
+    toeR: 0.12,
+    bb: 55.2,
+    diff: 43,
+    abs: 3,
+    tc: 2,
+    tcPowerCut: 2,
+    tcSlip: 4
+  };
 }
 
 function generateSetup(car, track, phase) {
@@ -128,10 +207,10 @@ function generateSetup(car, track, phase) {
   const carOffset = (car.classIndex + 1) * 0.25 + (car.index + 1) * 0.14;
   const trackOffset = tracks.findIndex((t) => t.id === track.id) * 0.11;
 
-  let phaseAdjust = { wing: 0, fuel: "Médio", bb: 0, diff: 0, tc: 0, abs: 0 };
-  if (phase === "qualifying") phaseAdjust = { wing: -1, fuel: "Baixo (2-4 voltas)", bb: -0.2, diff: -2, tc: -1, abs: -1 };
-  if (phase === "race") phaseAdjust = { wing: 0, fuel: "Planejado por stint", bb: 0, diff: 0, tc: 0, abs: 0 };
-  if (phase === "sprint") phaseAdjust = { wing: -0.5, fuel: "20 min + 1 volta", bb: -0.1, diff: -1, tc: -1, abs: -1 };
+  let phaseAdjust = { wing: 0, fuel: "Médio", bb: 0, diff: 0, tc: 0, abs: 0, tcPowerCut: 0, tcSlip: 0 };
+  if (phase === "qualifying") phaseAdjust = { wing: -1, fuel: "Baixo (2-4 voltas)", bb: -0.2, diff: -2, tc: -1, abs: -1, tcPowerCut: -1, tcSlip: 1 };
+  if (phase === "race") phaseAdjust = { wing: 0, fuel: "Planejado por stint", bb: 0, diff: 0, tc: 0, abs: 0, tcPowerCut: 0, tcSlip: 0 };
+  if (phase === "sprint") phaseAdjust = { wing: -0.5, fuel: "20 min + 1 volta", bb: -0.1, diff: -1, tc: -1, abs: -1, tcPowerCut: -1, tcSlip: 1 };
 
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
   const round = (v, p = 1) => Number(v.toFixed(p));
@@ -152,37 +231,41 @@ function generateSetup(car, track, phase) {
     bb: round(clamp(base.bb + phaseAdjust.bb + (car.index % 4) * 0.2 + (track.perfil === "velocidade" ? 0.2 : -0.1), car.type === "gt3" ? 55 : 54, car.type === "gt3" ? 60 : 58), 1),
     diff: Math.round(clamp(base.diff + phaseAdjust.diff + (track.perfil === "tracao" ? 3 : 0), 32, 58)),
     abs: Math.round(clamp(base.abs + adjust.abs + phaseAdjust.abs + (car.index % 2), 1, 6)),
-    tc: Math.round(clamp(base.tc + adjust.tc + phaseAdjust.tc + (car.classIndex % 2), 1, 6)),
-    tc2: Math.round(clamp(base.tc2 + (track.perfil === "tracao" ? 1 : 0), 1, 8)),
+    tc: Math.round(clamp(base.tc + adjust.tc + phaseAdjust.tc + (car.classIndex % 2), controlsCatalog.tc.min, controlsCatalog.tc.max)),
+    tcPowerCut: Math.round(clamp(base.tcPowerCut + adjust.tcPowerCut + phaseAdjust.tcPowerCut + (car.classIndex % 2), controlsCatalog.tcPowerCut.min, controlsCatalog.tcPowerCut.max)),
+    tcSlip: Math.round(clamp(base.tcSlip + adjust.tcSlip + phaseAdjust.tcSlip + (track.perfil === "tracao" ? -1 : 0), controlsCatalog.tcSlip.min, controlsCatalog.tcSlip.max)),
     fuel: phaseAdjust.fuel,
     notes:
       phase === "qualifying"
-        ? "Voltado para volta rápida: carro mais solto, menos combustível e resposta imediata."
+        ? "Qualifying: resposta mais direta para volta rápida, com menor margem de proteção eletrônica."
         : phase === "sprint"
-          ? "Agressivo para 20min: priorize ataque sem necessidade de poupar o equipamento."
-          : "Foco em consistência de stint, preservando pneus e estabilidade em tráfego."
+          ? "Sprint 20min: estilo agressivo, menor corte de potência e mais slip permitido para acelerar saída de curva."
+          : "Race: ritmo de stint, foco em consistência térmica de pneus e estabilidade em tráfego."
   };
 }
 
 function fixedSetup(car, track) {
   const race = generateSetup(car, track, "race");
   const sprint = generateSetup(car, track, "sprint");
-  const enduranceAbs = Math.min(6, race.abs + 1);
-  const enduranceTc = Math.min(6, race.tc + 1);
+  const lowSpeedBias = track.perfil === "tracao" || track.perfil === "irregular" ? 1 : 0;
+  const highSpeedBias = track.perfil === "velocidade" ? 1 : 0;
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
   return {
     sprint: {
       abs: sprint.abs,
-      tc: Math.max(1, sprint.tc - 1),
-      tc2: Math.max(1, sprint.tc2 - 1),
+      tc: clamp(sprint.tc - 1 + lowSpeedBias - highSpeedBias, 1, 8),
+      tcPowerCut: clamp(sprint.tcPowerCut - 1 + lowSpeedBias, 1, 8),
+      tcSlip: clamp(sprint.tcSlip + 1 - lowSpeedBias + highSpeedBias, 1, 8),
       bb: Math.max(54, sprint.bb - 0.2).toFixed(1) + "%",
       map: track.perfil === "velocidade" ? "Map 1-2" : "Map 2",
       fuel: "20 min + 1 volta (margem mínima)"
     },
     endurance: {
-      abs: enduranceAbs,
-      tc: enduranceTc,
-      tc2: Math.min(8, race.tc2 + 1),
+      abs: Math.min(6, race.abs + 1),
+      tc: clamp(race.tc + 1 + lowSpeedBias - highSpeedBias, 1, 8),
+      tcPowerCut: clamp(race.tcPowerCut + 1 + lowSpeedBias, 1, 8),
+      tcSlip: clamp(race.tcSlip - 1 - lowSpeedBias + highSpeedBias, 1, 8),
       bb: Math.min(60, race.bb + 0.3).toFixed(1) + "%",
       map: track.perfil === "velocidade" ? "Map 2-3" : "Map 3",
       fuel: "Stint completo + margem de segurança"
@@ -190,12 +273,28 @@ function fixedSetup(car, track) {
   };
 }
 
+function levelClass(controlKey, value) {
+  if (controlKey === "tcSlip") {
+    if (value >= 6) return "level-high";
+    if (value >= 4) return "level-mid";
+    return "level-low";
+  }
+
+  if (value >= 6) return "level-high";
+  if (value >= 4) return "level-mid";
+  return "level-low";
+}
+
+function levelBadge(controlKey, value) {
+  return `<span class="level ${levelClass(controlKey, value)}">${value}</span>`;
+}
+
 function renderCars(filtered) {
   cardsEl.innerHTML = filtered
     .map(
       (car) => `
-      <article class="car-card ${car.key === state.selectedCar ? "is-selected" : ""}" data-key="${car.key}">
-        <h3>${car.nome}</h3>
+      <article class="car-card reveal ${car.key === state.selectedCar ? "is-selected" : ""}" data-key="${car.key}">
+        <h3 class="font-race text-base text-slate-50">${car.nome}</h3>
         <p>${car.classe}</p>
       </article>`
     )
@@ -207,6 +306,7 @@ function renderCars(filtered) {
       carFilter.value = state.selectedCar;
       renderSelection();
       renderCars(filtered);
+      runRevealAnimation();
     });
   });
 }
@@ -229,6 +329,66 @@ function setupDownloadButton(setupType, car, track) {
   return btn;
 }
 
+function renderControlRows(car, setup) {
+  const controlLines = [];
+  car.controlAvailability.forEach((controlKey) => {
+    if (controlKey === "tc") controlLines.push(`<li>TC: ${setup.tc}</li>`);
+    if (controlKey === "tcPowerCut") controlLines.push(`<li>TC Power Cut: ${setup.tcPowerCut}</li>`);
+    if (controlKey === "tcSlip") controlLines.push(`<li>TC Slip: ${setup.tcSlip}</li>`);
+  });
+  return controlLines.join("");
+}
+
+function renderFixedTable(car, fixed) {
+  const fixedControls = car.controlAvailability;
+  const staticColumns = [
+    { key: "abs", label: "ABS" },
+    ...fixedControls.map((controlKey) => ({ key: controlKey, label: controlsCatalog[controlKey].label })),
+    { key: "bb", label: "Brake Bias" },
+    { key: "map", label: "Engine Map" },
+    { key: "fuel", label: "Fuel Strategy" }
+  ];
+
+  const rows = [
+    { label: "Sprint 20min (agressivo)", values: fixed.sprint },
+    { label: "Endurance (conservador)", values: fixed.endurance }
+  ];
+
+  const toCell = (column, values) => {
+    if (["tc", "tcPowerCut", "tcSlip"].includes(column.key)) {
+      return levelBadge(column.key, values[column.key]);
+    }
+    if (column.key === "abs") {
+      return levelBadge("abs", values.abs);
+    }
+    return values[column.key];
+  };
+
+  fixedSetupEl.innerHTML = `
+    <div class="table-wrap panel-anim">
+      <table>
+        <thead>
+          <tr>
+            <th>Formato</th>
+            ${staticColumns.map((column) => `<th>${column.label}</th>`).join("")}
+          </tr>
+        </thead>
+        <tbody>
+          ${rows
+            .map(
+              (row) => `
+            <tr>
+              <td>${row.label}</td>
+              ${staticColumns.map((column) => `<td>${toCell(column, row.values)}</td>`).join("")}
+            </tr>`
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
 function renderSelection() {
   const car = cars.find((c) => c.key === state.selectedCar);
   const track = tracks.find((t) => t.id === state.selectedTrack);
@@ -241,7 +401,7 @@ function renderSelection() {
   const openBox = document.createElement("div");
   openBox.className = "box";
   openBox.innerHTML = `
-    <h3>Open Setup • ${state.selectedTab.toUpperCase()}</h3>
+    <h3>Open setup • ${state.selectedTab.toUpperCase()}</h3>
     <p>${setup.notes}</p>
     <ul>
       <li>Pressão pneus (fr/tr): ${setup.psiF} / ${setup.psiR} psi</li>
@@ -255,7 +415,7 @@ function renderSelection() {
       <li>Brake Bias: ${setup.bb}%</li>
       <li>Diferencial: ${setup.diff}%</li>
       <li>ABS: ${setup.abs}</li>
-      <li>TC / TC2: ${setup.tc} / ${setup.tc2}</li>
+      ${renderControlRows(car, setup)}
       <li>Estratégia de combustível: ${setup.fuel}</li>
     </ul>
   `;
@@ -267,57 +427,41 @@ function renderSelection() {
 
   openSetupEl.innerHTML = "";
   const wrapper = document.createElement("div");
-  wrapper.className = "grid-2";
+  wrapper.className = "setup-grid panel-anim";
   wrapper.append(openBox, downloads);
   openSetupEl.appendChild(wrapper);
 
   const fixed = fixedSetup(car, track);
-  fixedSetupEl.innerHTML = `
-    <table>
-      <thead>
-        <tr>
-          <th>Formato</th>
-          <th>ABS</th>
-          <th>TC</th>
-          <th>TC2</th>
-          <th>Brake Bias</th>
-          <th>Engine Map</th>
-          <th>Fuel Strategy</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Sprint 20min (agressivo)</td>
-          <td>${fixed.sprint.abs}</td>
-          <td>${fixed.sprint.tc}</td>
-          <td>${fixed.sprint.tc2}</td>
-          <td>${fixed.sprint.bb}</td>
-          <td>${fixed.sprint.map}</td>
-          <td>${fixed.sprint.fuel}</td>
-        </tr>
-        <tr>
-          <td>Endurance (conservador)</td>
-          <td>${fixed.endurance.abs}</td>
-          <td>${fixed.endurance.tc}</td>
-          <td>${fixed.endurance.tc2}</td>
-          <td>${fixed.endurance.bb}</td>
-          <td>${fixed.endurance.map}</td>
-          <td>${fixed.endurance.fuel}</td>
-        </tr>
-      </tbody>
-    </table>
-  `;
+  renderFixedTable(car, fixed);
+}
+
+function runRevealAnimation() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 }
 
 classFilter.addEventListener("change", (e) => {
   state.selectedClass = e.target.value;
   refreshCarOptions();
+  runRevealAnimation();
 });
 
 carFilter.addEventListener("change", (e) => {
   state.selectedCar = e.target.value;
   renderSelection();
   renderCars(getFilteredCars());
+  runRevealAnimation();
 });
 
 trackFilter.addEventListener("change", (e) => {
@@ -328,6 +472,7 @@ trackFilter.addEventListener("change", (e) => {
 searchInput.addEventListener("input", (e) => {
   state.search = e.target.value.trim().toLowerCase();
   refreshCarOptions();
+  runRevealAnimation();
 });
 
 tabs.forEach((tab) => {
@@ -343,3 +488,4 @@ setupFilters();
 classFilter.value = state.selectedClass;
 trackFilter.value = state.selectedTrack;
 renderSelection();
+runRevealAnimation();
