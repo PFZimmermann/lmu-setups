@@ -2,6 +2,8 @@
 
 Site estático em **Vanilla JS + Tailwind CSS (CDN)** com foco em setups do **Le Mans Ultimate** por **Classe → Carro → Pista**.
 
+> Observação: o uso de Tailwind via CDN foi mantido para simplificar o deploy estático no GitHub Pages sem pipeline de build.
+
 ## Conteúdo
 - Setups abertos com abas:
   - **Qualifying**

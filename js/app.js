@@ -51,6 +51,15 @@ const controlsCatalog = {
   tcSlip: { label: "TC Slip", min: 1, max: 8 }
 };
 
+const DEFAULT_CONTROL_AVAILABILITY = ["tc", "tcPowerCut", "tcSlip"];
+
+const controlAvailabilityByClass = {
+  Hypercar: DEFAULT_CONTROL_AVAILABILITY,
+  LMP2: DEFAULT_CONTROL_AVAILABILITY,
+  LMP3: DEFAULT_CONTROL_AVAILABILITY,
+  GT3: DEFAULT_CONTROL_AVAILABILITY
+};
+
 const profileAdjust = {
   velocidade: { aero: -2.5, ride: -1, camber: -0.08, tc: -1, abs: -1, tcPowerCut: -1, tcSlip: 1 },
   tecnica: { aero: 2.5, ride: 1, camber: -0.15, tc: 0, abs: 1, tcPowerCut: 0, tcSlip: 0 },
@@ -62,7 +71,7 @@ const cars = Object.entries(classes).flatMap(([classe, nomes], classIndex) =>
   nomes.map((nome, index) => {
     const isGT3 = classe === "GT3";
     const isProto = classe === "Hypercar" || classe === "LMP2" || classe === "LMP3";
-    const controlAvailability = ["tc", "tcPowerCut", "tcSlip"];
+    const controlAvailability = controlAvailabilityByClass[classe] || DEFAULT_CONTROL_AVAILABILITY;
 
     return {
       nome,
