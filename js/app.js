@@ -273,13 +273,7 @@ function fixedSetup(car, track) {
   };
 }
 
-function levelClass(controlKey, value) {
-  if (controlKey === "tcSlip") {
-    if (value >= 6) return "level-high";
-    if (value >= 4) return "level-mid";
-    return "level-low";
-  }
-
+function levelClass(_controlKey, value) {
   if (value >= 6) return "level-high";
   if (value >= 4) return "level-mid";
   return "level-low";
